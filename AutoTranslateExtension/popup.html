@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto Translate</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        #translateButton {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        #translateButton:hover {
+            background-color: #0056b3;
+        }
+        #targetLang {
+            margin-right: 10px;
+            padding: 5px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background: white;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+        }
+        .flag-icon {
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <select id="targetLang">
+            <option value="vi" data-icon="flag-icon flag-icon-vn">Vietnamese</option>
+            <option value="en" data-icon="flag-icon flag-icon-gb">English</option>
+            <option value="fr" data-icon="flag-icon flag-icon-fr">French</option>
+            <!-- Thêm các ngôn ngữ khác nếu cần -->
+        </select>
+        <button id="translateButton">Translate</button>
+    </div>
+    <script src="popup.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const select = document.getElementById('targetLang');
+            for (let i = 0; i < select.options.length; i++) {
+                const option = select.options[i];
+                const iconClass = option.getAttribute('data-icon');
+                if (iconClass) {
+                    option.innerHTML = `<span class="${iconClass}"></span> ${option.text}`;
+                }
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+{
+    "manifest_version": 3,
+    "name": "Auto Translate to Vietnamese",
+    "version": "1.0",
+    "description": "Dịch tự động các trang web sang tiếng Việt.",
+    "permissions": [
+      "activeTab",
+      "scripting"
+    ],
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+        "16": "icons/translate-16.png",
+        "48": "icons/translate-48.png",
+        "128": "icons/translate-128.png"
+      }
+    }
+  }
+  
